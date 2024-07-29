@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{84AE3634-75BB-4868-A24F-E2E3F95AE4CE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Armstrong.Core.Services.CurveDrawing</RootNamespace>
+    <AssemblyName>Armstrong.Core.Services.CurveDrawing</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MathParser.org-mXparser, Version=4.3.2.0, Culture=neutral, PublicKeyToken=0fbab7add73ed6e2, processorArchitecture=MSIL">
+      <HintPath>..\packages\MathParser.org-mXparser.4.3.2\lib\net452\MathParser.org-mXparser.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=638079a8f0bd61e9, processorArchitecture=MSIL">
+      <HintPath>..\packages\OxyPlot.Core.1.0.0\lib\net45\OxyPlot.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OxyPlot.WindowsForms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=245eacd6b5d2d338, processorArchitecture=MSIL">
+      <HintPath>..\packages\OxyPlot.WindowsForms.1.0.0\lib\net45\OxyPlot.WindowsForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants\CurveColors.cs" />
+    <Compile Include="Constants\CurveSymbol.cs" />
+    <Compile Include="Enums\AlignmentType.cs" />
+    <Compile Include="Enums\AnnotationType.cs" />
+    <Compile Include="Enums\AxisPosition.cs" />
+    <Compile Include="Enums\CurveFamilyType.cs" />
+    <Compile Include="Enums\DrawingAreaType.cs" />
+    <Compile Include="Enums\ExportType.cs" />
+    <Compile Include="Enums\LabelPosition.cs" />
+    <Compile Include="Enums\LineStyle.cs" />
+    <Compile Include="Helpers\AxisScalerHelper.cs" />
+    <Compile Include="Helpers\ConvertHelper.cs" />
+    <Compile Include="Helpers\CurveImageFileHelper.cs" />
+    <Compile Include="Helpers\ICurveImageFileHelper.cs" />
+    <Compile Include="Helpers\PlotModelHelper.cs" />
+    <Compile Include="Helpers\PositionConverter.cs" />
+    <Compile Include="Models\Axis.cs" />
+    <Compile Include="Models\AxisData.cs" />
+    <Compile Include="Models\CurveData.cs" />
+    <Compile Include="Models\CurveSeries\CurveSeries.cs" />
+    <Compile Include="Models\CurveSeries\DesignEnvelopePoint.cs" />
+    <Compile Include="Models\CurveSeries\DeBoosterEnvelope.cs" />
+    <Compile Include="Models\CurveSeries\CurveSeriesRoot.cs" />
+    <Compile Include="Models\CurveSeries\Label.cs" />
+    <Compile Include="Models\CurveSeries\Line.cs" />
+    <Compile Include="Models\CurveSeries\Points.cs" />
+    <Compile Include="Models\CurveSeries\Position.cs" />
+    <Compile Include="Models\CurveSeries\SamplePointRow.cs" />
+    <Compile Include="Models\CurveSeries\SamplePoints.cs" />
+    <Compile Include="Models\CurveSeries\Slope.cs" />
+    <Compile Include="Models\GraphAnnotation.cs" />
+    <Compile Include="Models\GraphArea.cs" />
+    <Compile Include="Models\GraphBase.cs" />
+    <Compile Include="Models\GraphLine.cs" />
+    <Compile Include="Models\GraphPoint.cs" />
+    <Compile Include="Models\GraphPolynomial.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\CurveDrawingService.cs" />
+    <Compile Include="Service\ExportService.cs" />
+    <Compile Include="Service\ICurveDrawingService.cs" />
+    <Compile Include="Service\IExportService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Armstrong.Core.Services.PumpCurveData\Armstrong.Core.Services.PumpCurveData.csproj">
+      <Project>{f47601c0-dad3-4430-885c-063d11fe174b}</Project>
+      <Name>Armstrong.Core.Services.PumpCurveData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
